@@ -44,6 +44,8 @@
             this.buttonDivide = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.buttonEquals = new System.Windows.Forms.Button();
+            this.buttonPoint = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -51,7 +53,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(221, 21);
+            this.textBox1.Size = new System.Drawing.Size(281, 21);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -139,7 +141,7 @@
             // 
             // buttonMultiply
             // 
-            this.buttonMultiply.Location = new System.Drawing.Point(192, 151);
+            this.buttonMultiply.Location = new System.Drawing.Point(252, 99);
             this.buttonMultiply.Name = "buttonMultiply";
             this.buttonMultiply.Size = new System.Drawing.Size(41, 33);
             this.buttonMultiply.TabIndex = 12;
@@ -179,7 +181,7 @@
             // 
             // buttonDivide
             // 
-            this.buttonDivide.Location = new System.Drawing.Point(192, 203);
+            this.buttonDivide.Location = new System.Drawing.Point(252, 151);
             this.buttonDivide.Name = "buttonDivide";
             this.buttonDivide.Size = new System.Drawing.Size(41, 33);
             this.buttonDivide.TabIndex = 16;
@@ -201,17 +203,39 @@
             // 
             this.buttonEquals.Location = new System.Drawing.Point(72, 203);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(101, 33);
+            this.buttonEquals.Size = new System.Drawing.Size(221, 33);
             this.buttonEquals.TabIndex = 14;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
             this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
+            // buttonPoint
+            // 
+            this.buttonPoint.Location = new System.Drawing.Point(192, 151);
+            this.buttonPoint.Name = "buttonPoint";
+            this.buttonPoint.Size = new System.Drawing.Size(41, 33);
+            this.buttonPoint.TabIndex = 17;
+            this.buttonPoint.Text = ".";
+            this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonPoint_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(252, 47);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(41, 33);
+            this.buttonClear.TabIndex = 18;
+            this.buttonClear.Text = "C";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 253);
+            this.ClientSize = new System.Drawing.Size(311, 253);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonPoint);
             this.Controls.Add(this.buttonDivide);
             this.Controls.Add(this.buttonEquals);
             this.Controls.Add(this.button0);
@@ -255,6 +279,8 @@
         private System.Windows.Forms.Button buttonDivide;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button buttonEquals;
+        private System.Windows.Forms.Button buttonPoint;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

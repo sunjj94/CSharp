@@ -18,18 +18,22 @@ namespace Arithmetic
             InitMember();
         }
 
-        protected long iNum;
+        protected double iNum;
         protected char cOpration;
         protected bool bFisrtNum;
+        protected bool bPoint;
+        protected short bPointNum;
        
         private void InitMember()
         {
             iNum = 0;
             cOpration = '=';
             bFisrtNum = true;
+            bPoint = false;
+            bPointNum = 0;
         }
 
-        private void NumberClick(long i)
+        private void NumberClick(Double i)
         {
             if (textBox1.Text == "Error")
             {
@@ -38,18 +42,31 @@ namespace Arithmetic
 
             try
             {
-                long iCurrent = long.Parse(textBox1.Text);
+                double iCurrent = double.Parse(textBox1.Text);
 
-                if (bFisrtNum)
+                if (bFisrtNum && (bPoint == false))
                 {
                     iCurrent = i;
                     bFisrtNum = false;
                 }
-                else
+                else if ((bFisrtNum == false) && (bPoint == false))
                 {
                     checked { iCurrent = (iCurrent * 10) + i; }
                 }
-
+                else if (bFisrtNum && (bPoint == true))
+                {
+                    iCurrent = i;
+                    checked { iCurrent = (iCurrent / 10.0); }
+                    bFisrtNum = false;
+                    bPointNum++;
+                }
+                else
+                {
+                    for (short k = 0; k <= bPointNum; k++)
+                        checked { i = (i / 10.0); }
+                    checked { iCurrent = i + iCurrent; }
+                    bPointNum++;
+                }
                 textBox1.Text = iCurrent.ToString();
             }
             catch
@@ -60,10 +77,10 @@ namespace Arithmetic
 
         private void OperationClick(char op)
         {
-            long iCurrent;
+            double iCurrent;
             try
             {
-                iCurrent = long.Parse(textBox1.Text);
+                iCurrent = double.Parse(textBox1.Text);
             }
             catch
             {
@@ -72,7 +89,7 @@ namespace Arithmetic
                 return;
             }
 
-            long iResult;
+            double iResult;
             try
             {
                 switch (cOpration)
@@ -89,6 +106,11 @@ namespace Arithmetic
                     case '/':
                         checked { iResult = iNum / iCurrent; }
                         break;
+                    case 'C':
+                        iResult = 0;
+                        iCurrent = 0;
+                        InitMember();
+                        break;
                     default:
                         iResult = iCurrent;
                         break;
@@ -104,6 +126,8 @@ namespace Arithmetic
             textBox1.Text = iResult.ToString();
             iNum = iResult;
             bFisrtNum = true;
+            bPoint = false;
+            bPointNum = 0;
             cOpration = op;
         }
 
@@ -187,6 +211,29 @@ namespace Arithmetic
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             OperationClick('=');
+        }
+
+        //添加清楚功能
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            cOpration = 'C';
+            OperationClick('=');
+        }
+
+        //添加小数点
+        private void buttonPoint_Click(object sender, EventArgs e)
+        {
+            bPoint = true;
+            if (bFisrtNum)
+            {
+                textBox1.Text = "0.";
+            }
+            else
+            {
+                string sCurrent = textBox1.Text;
+                sCurrent = sCurrent + '.';
+                textBox1.Text = sCurrent;
+            }
         }
 
         //添加文本框的KeyDown事件响应函数
