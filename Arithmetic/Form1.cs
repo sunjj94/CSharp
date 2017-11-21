@@ -188,5 +188,59 @@ namespace Arithmetic
         {
             OperationClick('=');
         }
+
+        //添加文本框的KeyDown事件响应函数
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.NumPad1:
+                    NumberClick(1);
+                    break;
+                case Keys.NumPad2:
+                    NumberClick(2);
+                    break;
+                case Keys.NumPad3:
+                    NumberClick(3);
+                    break;
+                case Keys.NumPad4:
+                    NumberClick(4);
+                    break;
+                case Keys.NumPad5:
+                    NumberClick(5);
+                    break;
+                case Keys.NumPad6:
+                    NumberClick(6);
+                    break;
+                case Keys.NumPad7:
+                    NumberClick(7);
+                    break;
+                case Keys.NumPad8:
+                    NumberClick(8);
+                    break;
+                case Keys.NumPad9:
+                    NumberClick(9);
+                    break;
+                case Keys.NumPad0:
+                    NumberClick(0);
+                    break;
+                case Keys.Add:
+                    OperationClick('+');
+                    break;
+                case Keys.Subtract:
+                    OperationClick('-');
+                    break;
+                case Keys.Multiply:
+                    OperationClick('*');
+                    break;
+                case Keys.Divide:
+                    OperationClick('/');
+                    break;
+                case Keys.Oemplus:
+                case Keys.Enter:
+                    OperationClick('=');
+                    break;
+            }
+        }
     }
 }
