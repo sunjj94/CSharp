@@ -16,6 +16,8 @@ namespace Arithmetic
         {
             InitializeComponent();
             InitMember();
+            buttonMR.Enabled = false;
+            buttonMM.Enabled = false;
         }
 
         protected double iNum;
@@ -23,7 +25,8 @@ namespace Arithmetic
         protected bool bFisrtNum;
         protected bool bPoint;
         protected short bPointNum;
-       
+        protected double Memry;
+
         private void InitMember()
         {
             iNum = 0;
@@ -293,6 +296,38 @@ namespace Arithmetic
                 case Keys.Enter:
                     OperatorsClick('=');
                     break;
+            }
+        }
+
+        private void buttonMC_Click(object sender, EventArgs e)
+        {
+            lableM.Visible = false;
+            Memry = 0;
+            buttonMR.Enabled = false;
+            buttonMM.Enabled = false;
+        }
+
+        private void buttonMR_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Memry.ToString();
+        }
+
+        private void buttonMS_Click(object sender, EventArgs e)
+        {
+            lableM.Visible = true;
+            double iResult = double.Parse(textBox1.Text);
+            Memry = iResult;
+            buttonMM.Enabled = true;
+            buttonMR.Enabled = true;
+        }
+
+        private void buttonMM_Click(object sender, EventArgs e)
+        {
+            double iReuslt = double.Parse(textBox1.Text);
+            if (lableM.Visible)
+            {
+                Memry += iReuslt;
+                textBox1.Text = Memry.ToString();
             }
         }
     }

@@ -46,6 +46,11 @@
             this.buttonEquals = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonMS = new System.Windows.Forms.Button();
+            this.buttonMR = new System.Windows.Forms.Button();
+            this.buttonMC = new System.Windows.Forms.Button();
+            this.buttonMM = new System.Windows.Forms.Button();
+            this.lableM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -229,11 +234,66 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // buttonMS
+            // 
+            this.buttonMS.Location = new System.Drawing.Point(312, 151);
+            this.buttonMS.Name = "buttonMS";
+            this.buttonMS.Size = new System.Drawing.Size(41, 33);
+            this.buttonMS.TabIndex = 19;
+            this.buttonMS.Text = "MS";
+            this.buttonMS.UseVisualStyleBackColor = true;
+            this.buttonMS.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // buttonMR
+            // 
+            this.buttonMR.Location = new System.Drawing.Point(312, 99);
+            this.buttonMR.Name = "buttonMR";
+            this.buttonMR.Size = new System.Drawing.Size(41, 33);
+            this.buttonMR.TabIndex = 20;
+            this.buttonMR.Text = "MR";
+            this.buttonMR.UseVisualStyleBackColor = true;
+            this.buttonMR.Click += new System.EventHandler(this.buttonMR_Click);
+            // 
+            // buttonMC
+            // 
+            this.buttonMC.Location = new System.Drawing.Point(312, 47);
+            this.buttonMC.Name = "buttonMC";
+            this.buttonMC.Size = new System.Drawing.Size(41, 33);
+            this.buttonMC.TabIndex = 21;
+            this.buttonMC.Text = "MC";
+            this.buttonMC.UseVisualStyleBackColor = true;
+            this.buttonMC.Click += new System.EventHandler(this.buttonMC_Click);
+            // 
+            // buttonMM
+            // 
+            this.buttonMM.Location = new System.Drawing.Point(312, 203);
+            this.buttonMM.Name = "buttonMM";
+            this.buttonMM.Size = new System.Drawing.Size(41, 33);
+            this.buttonMM.TabIndex = 22;
+            this.buttonMM.Text = "M+";
+            this.buttonMM.UseVisualStyleBackColor = true;
+            this.buttonMM.Click += new System.EventHandler(this.buttonMM_Click);
+            // 
+            // lableM
+            // 
+            this.lableM.AutoSize = true;
+            this.lableM.Location = new System.Drawing.Point(310, 15);
+            this.lableM.Name = "lableM";
+            this.lableM.Size = new System.Drawing.Size(11, 12);
+            this.lableM.TabIndex = 23;
+            this.lableM.Text = "M";
+            this.lableM.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 253);
+            this.ClientSize = new System.Drawing.Size(367, 253);
+            this.Controls.Add(this.lableM);
+            this.Controls.Add(this.buttonMM);
+            this.Controls.Add(this.buttonMC);
+            this.Controls.Add(this.buttonMR);
+            this.Controls.Add(this.buttonMS);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonPoint);
             this.Controls.Add(this.buttonDivide);
@@ -281,6 +341,11 @@
         private System.Windows.Forms.Button buttonEquals;
         private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonMS;
+        private System.Windows.Forms.Button buttonMR;
+        private System.Windows.Forms.Button buttonMC;
+        private System.Windows.Forms.Button buttonMM;
+        private System.Windows.Forms.Label lableM;
     }
 }
 
