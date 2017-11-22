@@ -71,11 +71,11 @@ namespace Arithmetic
             }
             catch
             {
-
+                return;
             }
         }
 
-        private void OperationClick(char op)
+        private void OperatorsClick(char op)
         {
             double iCurrent;
             try
@@ -190,34 +190,34 @@ namespace Arithmetic
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            OperationClick('+');
+            OperatorsClick('+');
         }
 
         private void buttonSubstract_Click(object sender, EventArgs e)
         {
-            OperationClick('-');
+            OperatorsClick('-');
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            OperationClick('*');
+            OperatorsClick('*');
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            OperationClick('/');
+            OperatorsClick('/');
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            OperationClick('=');
+            OperatorsClick('=');
         }
 
         //添加清楚功能
         private void buttonClear_Click(object sender, EventArgs e)
         {
             cOpration = 'C';
-            OperationClick('=');
+            OperatorsClick('=');
         }
 
         //添加小数点
@@ -272,20 +272,20 @@ namespace Arithmetic
                     NumberClick(0);
                     break;
                 case Keys.Add:
-                    OperationClick('+');
+                    OperatorsClick('+');
                     break;
                 case Keys.Subtract:
-                    OperationClick('-');
+                    OperatorsClick('-');
                     break;
                 case Keys.Multiply:
-                    OperationClick('*');
+                    OperatorsClick('*');
                     break;
                 case Keys.Divide:
-                    OperationClick('/');
+                    OperatorsClick('/');
                     break;
                 case Keys.Oemplus:
                 case Keys.Enter:
-                    OperationClick('=');
+                    OperatorsClick('=');
                     break;
             }
         }
