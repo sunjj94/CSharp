@@ -299,6 +299,7 @@ namespace Arithmetic
             }
         }
 
+        //清空记忆值
         private void buttonMC_Click(object sender, EventArgs e)
         {
             lableM.Visible = false;
@@ -307,27 +308,42 @@ namespace Arithmetic
             buttonMM.Enabled = false;
         }
 
+        //读取记忆值
         private void buttonMR_Click(object sender, EventArgs e)
         {
             textBox1.Text = Memry.ToString();
         }
 
+        //存储记忆值
         private void buttonMS_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Memry = double.Parse(textBox1.Text);
+            }
+            catch
+            {
+
+            }
             lableM.Visible = true;
-            double iResult = double.Parse(textBox1.Text);
-            Memry = iResult;
             buttonMM.Enabled = true;
             buttonMR.Enabled = true;
         }
 
+        //叠加记忆值
         private void buttonMM_Click(object sender, EventArgs e)
         {
-            double iReuslt = double.Parse(textBox1.Text);
-            if (lableM.Visible)
+            try
             {
-                Memry += iReuslt;
-                textBox1.Text = Memry.ToString();
+                if (lableM.Visible)
+                {
+                    checked { Memry += double.Parse(textBox1.Text); }
+                    textBox1.Text = Memry.ToString();
+                }
+            }
+            catch
+            {
+                textBox1.Text = "Error";
             }
         }
     }
