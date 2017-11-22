@@ -218,12 +218,18 @@ namespace Arithmetic
         {
             cOpration = 'C';
             OperatorsClick('=');
+            textBox1.Text = "0";
         }
 
         //添加小数点
         private void buttonPoint_Click(object sender, EventArgs e)
         {
+            if (bPoint)
+            {
+                textBox1.Text = "Error";
+            }
             bPoint = true;
+            
             if (bFisrtNum)
             {
                 textBox1.Text = "0.";
