@@ -12,9 +12,14 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
+        private Floor floor;
+        private int grade;
+        private int count;
+
         public Form1()
         {
             InitializeComponent();
+            floor = new Floor(new Point(30, 30));
         }
     }
 }
