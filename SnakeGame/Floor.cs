@@ -11,8 +11,8 @@ namespace SnakeGame
     {
         private static int unit = 5;//单位长度
         public int score;
-        private int length = 60 * unit;
-        private int width = 30 * unit;
+        private int length = 80 * unit;
+        private int width = 50 * unit;
         private Point dot; //顶点
         private Snake s;
         private Bean bean1;
@@ -96,7 +96,7 @@ namespace SnakeGame
         }
 
         //重新开始
-        private void Reset(Graphics g)
+        public void ReSet(Graphics g)
         {
             s.UnDisplay(g);
             s.Reset(dot, 10);

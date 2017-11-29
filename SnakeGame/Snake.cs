@@ -215,7 +215,7 @@ namespace SnakeGame
                     }
                     b.Display(g);
                 }
-                blockList.Add(b);
+                blockList.Add(bb);
             }
             catch (Exception e)
             {
