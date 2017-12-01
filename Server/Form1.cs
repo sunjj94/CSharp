@@ -16,5 +16,20 @@ namespace Server
         {
             InitializeComponent();
         }
+
+        private void 用户BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.用户BindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.phoneBookDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: 这行代码将数据加载到表“phoneBookDataSet.用户”中。您可以根据需要移动或删除它。
+            this.用户TableAdapter.Fill(this.phoneBookDataSet.用户);
+
+        }
     }
 }
