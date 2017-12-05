@@ -45,7 +45,10 @@ namespace AddressBook
                 if (result == 1)
                 {
                     //登录成功
-                    MessageBox.Show("登录成功！");
+                    frmMain f = new frmMain();
+                    f.tsslUserName.Text = txtUserName.Text.Trim();
+                    f.Show();
+                    this.Hide();
                 }
                 else
                 {
