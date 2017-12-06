@@ -133,5 +133,33 @@ namespace AddressBook
         {
             lvContact.View = View.LargeIcon;
         }
+
+        private void Add()
+        {
+            frmAdd f = new frmAdd();
+            if (f.ShowDialog(this) == DialogResult.OK)
+            {
+                LoadGroup();
+                if (trvGroup.Nodes.Count > 0)
+                {
+                    trvGroup.SelectedNode = trvGroup.Nodes[0];
+                    LoadList();
+                }
+                else
+                {
+                    lvContact.Clear();
+                }
+            }
+        }
+
+        private void tsbtnAdd_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+
+        private void 新增NToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
     }
 }
