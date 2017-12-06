@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,9 @@
             this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.imgTree = new System.Windows.Forms.ImageList(this.components);
+            this.imgSamllIcon = new System.Windows.Forms.ImageList(this.components);
+            this.imgLargeIcon = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -214,17 +218,23 @@
             // 
             // trvGroup
             // 
+            this.trvGroup.HideSelection = false;
+            this.trvGroup.ImageIndex = 0;
+            this.trvGroup.ImageList = this.imgTree;
             this.trvGroup.Location = new System.Drawing.Point(0, 62);
             this.trvGroup.Name = "trvGroup";
+            this.trvGroup.SelectedImageIndex = 0;
             this.trvGroup.Size = new System.Drawing.Size(153, 360);
             this.trvGroup.TabIndex = 2;
             this.trvGroup.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvGroup_AfterSelect);
             // 
             // lvContact
             // 
+            this.lvContact.LargeImageList = this.imgLargeIcon;
             this.lvContact.Location = new System.Drawing.Point(154, 62);
             this.lvContact.Name = "lvContact";
             this.lvContact.Size = new System.Drawing.Size(453, 360);
+            this.lvContact.SmallImageList = this.imgSamllIcon;
             this.lvContact.TabIndex = 3;
             this.lvContact.UseCompatibleStateImageBehavior = false;
             // 
@@ -263,6 +273,24 @@
             this.tsslCount.Size = new System.Drawing.Size(100, 17);
             this.tsslCount.Text = "共 个联系人";
             this.tsslCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // imgTree
+            // 
+            this.imgTree.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTree.ImageStream")));
+            this.imgTree.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgTree.Images.SetKeyName(0, "users.ico");
+            // 
+            // imgSamllIcon
+            // 
+            this.imgSamllIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgSamllIcon.ImageStream")));
+            this.imgSamllIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgSamllIcon.Images.SetKeyName(0, "user.ico");
+            // 
+            // imgLargeIcon
+            // 
+            this.imgLargeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLargeIcon.ImageStream")));
+            this.imgLargeIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLargeIcon.Images.SetKeyName(0, "user.ico");
             // 
             // frmMain
             // 
@@ -318,5 +346,8 @@
         private System.Windows.Forms.ToolStripMenuItem 图标toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 详细信息ToolStripMenuItem1;
         public System.Windows.Forms.ToolStripStatusLabel tsslUserName;
+        private System.Windows.Forms.ImageList imgTree;
+        private System.Windows.Forms.ImageList imgSamllIcon;
+        private System.Windows.Forms.ImageList imgLargeIcon;
     }
 }
