@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace AddressBook
 {
@@ -105,6 +106,123 @@ namespace AddressBook
                 pic.Image = Image.FromFile(dlg.FileName);
                 txtFilePath = dlg.FileName;
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+            #region 获取信息
+            //用户名
+            strUserName = ((frmMain)(this.Owner)).tsslUserName.Text;
+            //姓名
+            string name;
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("联系人姓名不能为空!", "添加失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                name = txtName.Text;
+            }
+            //组别
+            string group;
+            if (cmbGroup.Text.Trim() == "")
+            {
+                group = "未分组";
+            }
+            else
+            {
+                group = cmbGroup.Text.Trim();
+            }
+            //电话
+            string phone = txtPhone.Text.Trim();
+            //工作单位
+            string company = txtCompany.Text.Trim();
+            //email
+            string email = txtEmail.Text.Trim();
+            //照片
+            byte[] b = null;
+            if (txtFilePath != "")
+            {
+                try
+                {
+                    FileStream fs = new FileStream(txtFilePath, FileMode.Open, FileAccess.Read);
+                    int len = Convert.ToInt32(fs.Length);
+                    b = new byte[len];
+                    fs.Read(b, 0, len);
+                    fs.Close();
+                }
+                catch
+                {
+                    b = null;
+                }
+            }
+            #endregion 获取信息
+
+            #region 添加数据
+            try
+            {
+                SqlConnection conn = new SqlConnection(strConn);
+                SqlCommand cmd_maxid = new SqlCommand();
+                cmd_maxid.Connection = conn;
+
+                //获取最大编号
+                cmd_maxid.CommandText = "select isnull(max(编号),0)+1 from 联系人";
+                conn.Open();
+                int maxid;
+                try
+                {
+                    maxid = Convert.ToInt32(cmd_maxid.ExecuteScalar());
+                }
+                catch
+                {
+                    maxid = 1;
+                }
+                //insert
+                SqlCommand cmd_insert = new SqlCommand();
+                cmd_insert.Connection = conn;
+                cmd_insert.CommandText = "insert into 联系人(编号,用户名,组别,姓名,工作单位,联系电话,电子邮箱,照片) ";
+                cmd_insert.CommandText += " values(@编号,@用户名,@组别,@姓名,@工作单位,@联系电话,@电子邮箱,@照片)";
+                cmd_insert.Parameters.Add("@编号", SqlDbType.Int);
+                cmd_insert.Parameters.Add("@用户名", SqlDbType.VarChar, 50);
+                cmd_insert.Parameters.Add("@组别", SqlDbType.VarChar, 50);
+                cmd_insert.Parameters.Add("@姓名", SqlDbType.VarChar, 50);
+                cmd_insert.Parameters.Add("@工作单位", SqlDbType.VarChar, 500);
+                cmd_insert.Parameters.Add("@联系电话", SqlDbType.VarChar, 200);
+                cmd_insert.Parameters.Add("@电子邮箱", SqlDbType.VarChar, 200);
+                cmd_insert.Parameters.Add("@照片", SqlDbType.Image);
+
+                cmd_insert.Parameters["@编号"].Value = maxid;
+                cmd_insert.Parameters["@用户名"].Value = strUserName;
+                cmd_insert.Parameters["@组别"].Value = group;
+                cmd_insert.Parameters["@姓名"].Value = name;
+                cmd_insert.Parameters["@工作单位"].Value = company;
+                cmd_insert.Parameters["@联系电话"].Value = phone;
+                cmd_insert.Parameters["@电子邮箱"].Value = email;
+                if (txtFilePath == "")
+                {
+                    cmd_insert.Parameters["@照片"].Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd_insert.Parameters["@照片"].Value = b;
+                }
+                cmd_insert.ExecuteNonQuery();
+                conn.Close();
+                DialogResult = DialogResult.OK;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message, "添加失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            #endregion 添加数据
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
