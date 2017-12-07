@@ -95,8 +95,9 @@
             // 删除DToolStripMenuItem
             // 
             this.删除DToolStripMenuItem.Name = "删除DToolStripMenuItem";
-            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.删除DToolStripMenuItem.Text = "删除(&D)";
+            this.删除DToolStripMenuItem.Click += new System.EventHandler(this.删除DToolStripMenuItem_Click);
             // 
             // 修改MToolStripMenuItem
             // 
@@ -182,6 +183,7 @@
             this.tsbtnDelete.Size = new System.Drawing.Size(68, 36);
             this.tsbtnDelete.Text = "删除";
             this.tsbtnDelete.ToolTipText = "删除联系人";
+            this.tsbtnDelete.Click += new System.EventHandler(this.tsbtnDelete_Click);
             // 
             // tsbtnSearch
             // 
@@ -245,6 +247,7 @@
             this.lvContact.SmallImageList = this.imgSamllIcon;
             this.lvContact.TabIndex = 3;
             this.lvContact.UseCompatibleStateImageBehavior = false;
+            this.lvContact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvContact_KeyDown);
             this.lvContact.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvContact_MouseDoubleClick);
             // 
             // imgLargeIcon

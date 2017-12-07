@@ -199,5 +199,62 @@ namespace AddressBook
         {
             Edit();
         }
+
+        private void Delete()
+        {
+            if (lvContact.SelectedItems.Count < 1)
+            {
+                return;
+            }
+            if (MessageBox.Show("是否要删除选中的联系人?", "删除确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string strWhere = " where 编号 in (";
+                foreach (ListViewItem lvi in lvContact.SelectedItems)
+                {
+                    strWhere += lvi.Tag.ToString() + ",";
+                }
+                strWhere = strWhere.Substring(0, strWhere.Length - 1);
+                strWhere += ")";
+                try
+                {
+                    SqlConnection conn = new SqlConnection(strConn);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "delete from 联系人 " + strWhere;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    LoadGroup();
+                    if (trvGroup.Nodes.Count > 0)
+                    {
+                        trvGroup.SelectedNode = trvGroup.Nodes[0];
+                        LoadList();
+                    }
+                    else
+                    {
+                        lvContact.Clear();
+                    }
+                }
+                catch { }
+            }
+        }
+
+        private void tsbtnDelete_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void 删除DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void lvContact_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                Delete();
+            }
+        }
     }
 }
