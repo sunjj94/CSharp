@@ -161,5 +161,43 @@ namespace AddressBook
         {
             Add();
         }
+
+        private void Edit()
+        {
+            if (lvContact.SelectedItems.Count == 1)
+            {
+                int id = Convert.ToInt32(lvContact.SelectedItems[0].Tag);
+                frmEdit f = new frmEdit(id);
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadGroup();
+                    if (trvGroup.Nodes.Count > 0)
+                    {
+                        trvGroup.SelectedNode = trvGroup.Nodes[0];
+                        LoadList();
+                    }
+                    else
+                    {
+                        lvContact.Clear();
+                    }
+                }
+            }
+        }
+
+        private void tsbtnEdit_Click(object sender, EventArgs e)
+        {
+            Edit();
+        }
+
+        private void 修改MToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Edit();
+        }
+
+        //在lvContact控件中双击响应事件
+        private void lvContact_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Edit();
+        }
     }
 }

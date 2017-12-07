@@ -49,14 +49,14 @@
             this.图标toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.详细信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.trvGroup = new System.Windows.Forms.TreeView();
+            this.imgTree = new System.Windows.Forms.ImageList(this.components);
             this.lvContact = new System.Windows.Forms.ListView();
+            this.imgLargeIcon = new System.Windows.Forms.ImageList(this.components);
+            this.imgSamllIcon = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.imgTree = new System.Windows.Forms.ImageList(this.components);
-            this.imgSamllIcon = new System.Windows.Forms.ImageList(this.components);
-            this.imgLargeIcon = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -88,14 +88,14 @@
             // 新增NToolStripMenuItem
             // 
             this.新增NToolStripMenuItem.Name = "新增NToolStripMenuItem";
-            this.新增NToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增NToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.新增NToolStripMenuItem.Text = "新增(&N)";
             this.新增NToolStripMenuItem.Click += new System.EventHandler(this.新增NToolStripMenuItem_Click);
             // 
             // 删除DToolStripMenuItem
             // 
             this.删除DToolStripMenuItem.Name = "删除DToolStripMenuItem";
-            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.删除DToolStripMenuItem.Text = "删除(&D)";
             // 
             // 修改MToolStripMenuItem
@@ -103,16 +103,17 @@
             this.修改MToolStripMenuItem.Name = "修改MToolStripMenuItem";
             this.修改MToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.修改MToolStripMenuItem.Text = "修改(&M)";
+            this.修改MToolStripMenuItem.Click += new System.EventHandler(this.修改MToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(117, 6);
             // 
             // 搜索SToolStripMenuItem
             // 
             this.搜索SToolStripMenuItem.Name = "搜索SToolStripMenuItem";
-            this.搜索SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.搜索SToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.搜索SToolStripMenuItem.Text = "搜索(S)";
             // 
             // 查看ToolStripMenuItem
@@ -171,6 +172,7 @@
             this.tsbtnEdit.Size = new System.Drawing.Size(68, 36);
             this.tsbtnEdit.Text = "修改";
             this.tsbtnEdit.ToolTipText = "修改联系人";
+            this.tsbtnEdit.Click += new System.EventHandler(this.tsbtnEdit_Click);
             // 
             // tsbtnDelete
             // 
@@ -228,6 +230,12 @@
             this.trvGroup.TabIndex = 2;
             this.trvGroup.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvGroup_AfterSelect);
             // 
+            // imgTree
+            // 
+            this.imgTree.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTree.ImageStream")));
+            this.imgTree.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgTree.Images.SetKeyName(0, "users.ico");
+            // 
             // lvContact
             // 
             this.lvContact.LargeImageList = this.imgLargeIcon;
@@ -237,6 +245,19 @@
             this.lvContact.SmallImageList = this.imgSamllIcon;
             this.lvContact.TabIndex = 3;
             this.lvContact.UseCompatibleStateImageBehavior = false;
+            this.lvContact.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvContact_MouseDoubleClick);
+            // 
+            // imgLargeIcon
+            // 
+            this.imgLargeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLargeIcon.ImageStream")));
+            this.imgLargeIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLargeIcon.Images.SetKeyName(0, "user.ico");
+            // 
+            // imgSamllIcon
+            // 
+            this.imgSamllIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgSamllIcon.ImageStream")));
+            this.imgSamllIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgSamllIcon.Images.SetKeyName(0, "user.ico");
             // 
             // statusStrip1
             // 
@@ -273,24 +294,6 @@
             this.tsslCount.Size = new System.Drawing.Size(100, 17);
             this.tsslCount.Text = "共 个联系人";
             this.tsslCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // imgTree
-            // 
-            this.imgTree.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTree.ImageStream")));
-            this.imgTree.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgTree.Images.SetKeyName(0, "users.ico");
-            // 
-            // imgSamllIcon
-            // 
-            this.imgSamllIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgSamllIcon.ImageStream")));
-            this.imgSamllIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgSamllIcon.Images.SetKeyName(0, "user.ico");
-            // 
-            // imgLargeIcon
-            // 
-            this.imgLargeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLargeIcon.ImageStream")));
-            this.imgLargeIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgLargeIcon.Images.SetKeyName(0, "user.ico");
             // 
             // frmMain
             // 
