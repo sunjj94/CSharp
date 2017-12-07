@@ -41,13 +41,6 @@
             this.图标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.详细信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnSearch = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnView = new System.Windows.Forms.ToolStripDropDownButton();
-            this.图标toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.详细信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.trvGroup = new System.Windows.Forms.TreeView();
             this.imgTree = new System.Windows.Forms.ImageList(this.components);
             this.lvContact = new System.Windows.Forms.ListView();
@@ -57,6 +50,13 @@
             this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSearch = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnView = new System.Windows.Forms.ToolStripDropDownButton();
+            this.图标toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.详细信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -95,14 +95,14 @@
             // 删除DToolStripMenuItem
             // 
             this.删除DToolStripMenuItem.Name = "删除DToolStripMenuItem";
-            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除DToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.删除DToolStripMenuItem.Text = "删除(&D)";
             this.删除DToolStripMenuItem.Click += new System.EventHandler(this.删除DToolStripMenuItem_Click);
             // 
             // 修改MToolStripMenuItem
             // 
             this.修改MToolStripMenuItem.Name = "修改MToolStripMenuItem";
-            this.修改MToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改MToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.修改MToolStripMenuItem.Text = "修改(&M)";
             this.修改MToolStripMenuItem.Click += new System.EventHandler(this.修改MToolStripMenuItem_Click);
             // 
@@ -114,8 +114,9 @@
             // 搜索SToolStripMenuItem
             // 
             this.搜索SToolStripMenuItem.Name = "搜索SToolStripMenuItem";
-            this.搜索SToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.搜索SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.搜索SToolStripMenuItem.Text = "搜索(S)";
+            this.搜索SToolStripMenuItem.Click += new System.EventHandler(this.搜索SToolStripMenuItem_Click);
             // 
             // 查看ToolStripMenuItem
             // 
@@ -154,71 +155,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(609, 39);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbtnAdd
-            // 
-            this.tsbtnAdd.Image = global::AddressBook.Properties.Resources.filenew;
-            this.tsbtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAdd.Name = "tsbtnAdd";
-            this.tsbtnAdd.Size = new System.Drawing.Size(68, 36);
-            this.tsbtnAdd.Text = "新增";
-            this.tsbtnAdd.ToolTipText = "新增联系人";
-            this.tsbtnAdd.Click += new System.EventHandler(this.tsbtnAdd_Click);
-            // 
-            // tsbtnEdit
-            // 
-            this.tsbtnEdit.Image = global::AddressBook.Properties.Resources.edit;
-            this.tsbtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnEdit.Name = "tsbtnEdit";
-            this.tsbtnEdit.Size = new System.Drawing.Size(68, 36);
-            this.tsbtnEdit.Text = "修改";
-            this.tsbtnEdit.ToolTipText = "修改联系人";
-            this.tsbtnEdit.Click += new System.EventHandler(this.tsbtnEdit_Click);
-            // 
-            // tsbtnDelete
-            // 
-            this.tsbtnDelete.Image = global::AddressBook.Properties.Resources.editdelete;
-            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDelete.Name = "tsbtnDelete";
-            this.tsbtnDelete.Size = new System.Drawing.Size(68, 36);
-            this.tsbtnDelete.Text = "删除";
-            this.tsbtnDelete.ToolTipText = "删除联系人";
-            this.tsbtnDelete.Click += new System.EventHandler(this.tsbtnDelete_Click);
-            // 
-            // tsbtnSearch
-            // 
-            this.tsbtnSearch.Image = global::AddressBook.Properties.Resources.find;
-            this.tsbtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnSearch.Name = "tsbtnSearch";
-            this.tsbtnSearch.Size = new System.Drawing.Size(68, 36);
-            this.tsbtnSearch.Text = "搜索";
-            this.tsbtnSearch.ToolTipText = "搜索联系人";
-            // 
-            // tsbtnView
-            // 
-            this.tsbtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.图标toolStripMenuItem2,
-            this.详细信息ToolStripMenuItem1});
-            this.tsbtnView.Image = global::AddressBook.Properties.Resources.view_text;
-            this.tsbtnView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnView.Name = "tsbtnView";
-            this.tsbtnView.Size = new System.Drawing.Size(77, 36);
-            this.tsbtnView.Text = "查看";
-            this.tsbtnView.ToolTipText = "查看联系人";
-            // 
-            // 图标toolStripMenuItem2
-            // 
-            this.图标toolStripMenuItem2.Name = "图标toolStripMenuItem2";
-            this.图标toolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
-            this.图标toolStripMenuItem2.Text = "图标";
-            this.图标toolStripMenuItem2.Click += new System.EventHandler(this.图标toolStripMenuItem2_Click);
-            // 
-            // 详细信息ToolStripMenuItem1
-            // 
-            this.详细信息ToolStripMenuItem1.Name = "详细信息ToolStripMenuItem1";
-            this.详细信息ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.详细信息ToolStripMenuItem1.Text = "详细信息";
-            this.详细信息ToolStripMenuItem1.Click += new System.EventHandler(this.详细信息ToolStripMenuItem1_Click);
             // 
             // trvGroup
             // 
@@ -297,6 +233,72 @@
             this.tsslCount.Size = new System.Drawing.Size(100, 17);
             this.tsslCount.Text = "共 个联系人";
             this.tsslCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tsbtnAdd
+            // 
+            this.tsbtnAdd.Image = global::AddressBook.Properties.Resources.filenew;
+            this.tsbtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAdd.Name = "tsbtnAdd";
+            this.tsbtnAdd.Size = new System.Drawing.Size(68, 36);
+            this.tsbtnAdd.Text = "新增";
+            this.tsbtnAdd.ToolTipText = "新增联系人";
+            this.tsbtnAdd.Click += new System.EventHandler(this.tsbtnAdd_Click);
+            // 
+            // tsbtnEdit
+            // 
+            this.tsbtnEdit.Image = global::AddressBook.Properties.Resources.edit;
+            this.tsbtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnEdit.Name = "tsbtnEdit";
+            this.tsbtnEdit.Size = new System.Drawing.Size(68, 36);
+            this.tsbtnEdit.Text = "修改";
+            this.tsbtnEdit.ToolTipText = "修改联系人";
+            this.tsbtnEdit.Click += new System.EventHandler(this.tsbtnEdit_Click);
+            // 
+            // tsbtnDelete
+            // 
+            this.tsbtnDelete.Image = global::AddressBook.Properties.Resources.editdelete;
+            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDelete.Name = "tsbtnDelete";
+            this.tsbtnDelete.Size = new System.Drawing.Size(68, 36);
+            this.tsbtnDelete.Text = "删除";
+            this.tsbtnDelete.ToolTipText = "删除联系人";
+            this.tsbtnDelete.Click += new System.EventHandler(this.tsbtnDelete_Click);
+            // 
+            // tsbtnSearch
+            // 
+            this.tsbtnSearch.Image = global::AddressBook.Properties.Resources.find;
+            this.tsbtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSearch.Name = "tsbtnSearch";
+            this.tsbtnSearch.Size = new System.Drawing.Size(68, 36);
+            this.tsbtnSearch.Text = "搜索";
+            this.tsbtnSearch.ToolTipText = "搜索联系人";
+            this.tsbtnSearch.Click += new System.EventHandler(this.tsbtnSearch_Click);
+            // 
+            // tsbtnView
+            // 
+            this.tsbtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.图标toolStripMenuItem2,
+            this.详细信息ToolStripMenuItem1});
+            this.tsbtnView.Image = global::AddressBook.Properties.Resources.view_text;
+            this.tsbtnView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnView.Name = "tsbtnView";
+            this.tsbtnView.Size = new System.Drawing.Size(77, 36);
+            this.tsbtnView.Text = "查看";
+            this.tsbtnView.ToolTipText = "查看联系人";
+            // 
+            // 图标toolStripMenuItem2
+            // 
+            this.图标toolStripMenuItem2.Name = "图标toolStripMenuItem2";
+            this.图标toolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.图标toolStripMenuItem2.Text = "图标";
+            this.图标toolStripMenuItem2.Click += new System.EventHandler(this.图标toolStripMenuItem2_Click);
+            // 
+            // 详细信息ToolStripMenuItem1
+            // 
+            this.详细信息ToolStripMenuItem1.Name = "详细信息ToolStripMenuItem1";
+            this.详细信息ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.详细信息ToolStripMenuItem1.Text = "详细信息";
+            this.详细信息ToolStripMenuItem1.Click += new System.EventHandler(this.详细信息ToolStripMenuItem1_Click);
             // 
             // frmMain
             // 

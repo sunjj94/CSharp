@@ -256,5 +256,21 @@ namespace AddressBook
                 Delete();
             }
         }
+
+        private void Search()
+        {
+            frmSearch f = new frmSearch(tsslUserName.Text);
+            f.ShowDialog();
+        }
+
+        private void tsbtnSearch_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void 搜索SToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
     }
 }
