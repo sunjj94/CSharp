@@ -136,7 +136,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSearch";
+            this.Text = "查找联系人";
             this.Load += new System.EventHandler(this.frmSearch_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
