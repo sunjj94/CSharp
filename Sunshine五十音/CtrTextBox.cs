@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Sunshine五十音
 {
-    class CtrTextBox
+    public class CtrTextBox
     {
         //CtrTextBox的位置
         private Point ctrLocation;
