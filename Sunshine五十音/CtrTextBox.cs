@@ -8,9 +8,9 @@ using System.Drawing;
 
 namespace Sunshine五十音
 {
-    public class CtrLable
+    class CtrTextBox
     {
-        //CtrLable的位置
+        //CtrTextBox的位置
         private Point ctrLocation;
         private String ctrString;
 
@@ -41,11 +41,10 @@ namespace Sunshine五十音
         }
 
         //生成方法
-        public void DrawCtrLable(Point p, String s)
+        public void DrawCtrTextBox(Point p)
         {
-            Label textLable = new Label();
-            textLable.Location = p;
-            textLable.Text = s;
+            TextBox textBox = new TextBox();
+            textBox.Location = p;
         }
     }
 }
