@@ -8,13 +8,13 @@ using System.Drawing;
 
 namespace Sunshine五十音
 {
-    public class CtrTextBox
+    public class CtrLabel
     {
-        //CtrTextBox的位置
+        //CtrLabel的位置
         private Point ctrLocation;
         private String ctrString;
         private Size ctrSize;
-                
+
         //位置属性
         public Point CtrLocation
         {
@@ -54,24 +54,24 @@ namespace Sunshine五十音
         }
 
         //生成方法
-        public void DrawCtrTextBox(Point p, Size s, Control.ControlCollection con)
+        public void DrawCtrLabel(Point p, String str, Size s, Control.ControlCollection con)
         {
-            TextBox textBox = new TextBox();
-            textBox.Location = p;
-            textBox.Size = s;
-            textBox.Font = new Font("宋体", 14, FontStyle.Regular);
-            textBox.TextAlign = HorizontalAlignment.Center;
-            con.Add(textBox);
+            Label textLabel = new Label();
+            textLabel.Location = p;
+            textLabel.Text = str;
+            textLabel.Size = s;
+            textLabel.Font = new Font("宋体", 18, FontStyle.Bold);
+            con.Add(textLabel);
         }
 
-        public void DrawCtrTextBox(Control.ControlCollection con)
+        public void DrawCtrLabel(Control.ControlCollection con)
         {
-            TextBox textBox = new TextBox();
-            textBox.Location = ctrLocation;
-            textBox.Size = ctrSize;
-            textBox.Font = new Font("宋体", 14, FontStyle.Regular);
-            textBox.TextAlign = HorizontalAlignment.Center;
-            con.Add(textBox);
+            Label textLabel = new Label();
+            textLabel.Location = ctrLocation;
+            textLabel.Text = ctrString;
+            textLabel.Size = ctrSize;
+            textLabel.Font = new Font("宋体", 18, FontStyle.Bold);
+            con.Add(textLabel);
         }
     }
 }
