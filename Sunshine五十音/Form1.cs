@@ -13,15 +13,31 @@ namespace Sunshine五十音
     public partial class Form1 : Form
     {
         private Sneces sneces;
-        private TextBox ttextBox;
+        private Property proForm;
+
         public Form1()
         {
             InitializeComponent();
-            //ttextBox = new TextBox();
-            //ttextBox.Location = new Point(100, 100);
-            //ttextBox.Size = new Size(80, 80);
-            this.Controls.Add(ttextBox);
-            sneces = new Sneces(new Point(30, 60), new Size(60, 25), this.Controls);
+            //获取软件设置
+            proForm = new Property();
+            foreach (Control c in groupBox1.Controls)
+            {
+                if (c is CheckBox)
+                    proForm.SetProperty((CheckBox)c);
+            }
+            sneces = new Sneces(new Point(30, 60), new Size(60, 25), this.Controls, proForm);
+        }
+
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            //获取软件设置
+            proForm = new Property();
+            foreach (Control c in groupBox1.Controls)
+            {
+                if (c is CheckBox)
+                proForm.SetProperty((CheckBox)c);
+            }
+            sneces.Update(new Point(30, 60), new Size(60, 25), this.Controls, proForm);
         }
     }
 }

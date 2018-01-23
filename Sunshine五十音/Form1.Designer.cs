@@ -28,92 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBoxSurd = new System.Windows.Forms.CheckBox();
+            this.checkBoxDullness = new System.Windows.Forms.CheckBox();
+            this.checkBoxOverSound = new System.Windows.Forms.CheckBox();
+            this.checkBoxHira = new System.Windows.Forms.CheckBox();
+            this.checkBoxkana = new System.Windows.Forms.CheckBox();
+            this.checkBoxReview = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ButtonOK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // checkBoxSurd
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 21);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "清音拨音";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxSurd.AutoSize = true;
+            this.checkBoxSurd.Checked = true;
+            this.checkBoxSurd.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSurd.Location = new System.Drawing.Point(6, 20);
+            this.checkBoxSurd.Name = "checkBoxSurd";
+            this.checkBoxSurd.Size = new System.Drawing.Size(48, 16);
+            this.checkBoxSurd.TabIndex = 0;
+            this.checkBoxSurd.Text = "清音";
+            this.checkBoxSurd.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxDullness
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(100, 21);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 16);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "浊音半浊音";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxDullness.AutoSize = true;
+            this.checkBoxDullness.Checked = true;
+            this.checkBoxDullness.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDullness.Location = new System.Drawing.Point(62, 20);
+            this.checkBoxDullness.Name = "checkBoxDullness";
+            this.checkBoxDullness.Size = new System.Drawing.Size(48, 16);
+            this.checkBoxDullness.TabIndex = 1;
+            this.checkBoxDullness.Text = "浊音";
+            this.checkBoxDullness.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxOverSound
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(190, 21);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(48, 16);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "拗音";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxOverSound.AutoSize = true;
+            this.checkBoxOverSound.Checked = true;
+            this.checkBoxOverSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxOverSound.Location = new System.Drawing.Point(118, 20);
+            this.checkBoxOverSound.Name = "checkBoxOverSound";
+            this.checkBoxOverSound.Size = new System.Drawing.Size(48, 16);
+            this.checkBoxOverSound.TabIndex = 2;
+            this.checkBoxOverSound.Text = "拗音";
+            this.checkBoxOverSound.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxHira
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(244, 21);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(60, 16);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "平假名";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxHira.AutoSize = true;
+            this.checkBoxHira.Checked = true;
+            this.checkBoxHira.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHira.Location = new System.Drawing.Point(174, 20);
+            this.checkBoxHira.Name = "checkBoxHira";
+            this.checkBoxHira.Size = new System.Drawing.Size(60, 16);
+            this.checkBoxHira.TabIndex = 3;
+            this.checkBoxHira.Text = "平假名";
+            this.checkBoxHira.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBoxkana
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(310, 21);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(60, 16);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "片假名";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxkana.AutoSize = true;
+            this.checkBoxkana.Checked = true;
+            this.checkBoxkana.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxkana.Location = new System.Drawing.Point(242, 20);
+            this.checkBoxkana.Name = "checkBoxkana";
+            this.checkBoxkana.Size = new System.Drawing.Size(60, 16);
+            this.checkBoxkana.TabIndex = 4;
+            this.checkBoxkana.Text = "片假名";
+            this.checkBoxkana.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkBoxReview
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(440, 21);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(72, 16);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "复习巩固";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBoxReview.AutoSize = true;
+            this.checkBoxReview.Location = new System.Drawing.Point(310, 20);
+            this.checkBoxReview.Name = "checkBoxReview";
+            this.checkBoxReview.Size = new System.Drawing.Size(72, 16);
+            this.checkBoxReview.TabIndex = 5;
+            this.checkBoxReview.Text = "复习巩固";
+            this.checkBoxReview.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox4);
+            this.groupBox1.Controls.Add(this.ButtonOK);
+            this.groupBox1.Controls.Add(this.checkBoxOverSound);
+            this.groupBox1.Controls.Add(this.checkBoxReview);
+            this.groupBox1.Controls.Add(this.checkBoxSurd);
+            this.groupBox1.Controls.Add(this.checkBoxkana);
+            this.groupBox1.Controls.Add(this.checkBoxDullness);
+            this.groupBox1.Controls.Add(this.checkBoxHira);
             this.groupBox1.Location = new System.Drawing.Point(0, -7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 51);
+            this.groupBox1.Size = new System.Drawing.Size(468, 51);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // ButtonOK
+            // 
+            this.ButtonOK.Location = new System.Drawing.Point(399, 14);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(48, 26);
+            this.ButtonOK.TabIndex = 6;
+            this.ButtonOK.Text = "确定";
+            this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // Form1
             // 
@@ -121,8 +143,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(527, 352);
+            this.ClientSize = new System.Drawing.Size(469, 383);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(485, 422);
+            this.MinimumSize = new System.Drawing.Size(485, 422);
             this.Name = "Form1";
             this.Text = "Sunshine五十音";
             this.groupBox1.ResumeLayout(false);
@@ -133,13 +157,14 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBoxSurd;
+        private System.Windows.Forms.CheckBox checkBoxDullness;
+        private System.Windows.Forms.CheckBox checkBoxOverSound;
+        private System.Windows.Forms.CheckBox checkBoxHira;
+        private System.Windows.Forms.CheckBox checkBoxkana;
+        private System.Windows.Forms.CheckBox checkBoxReview;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button ButtonOK;
     }
 }
 

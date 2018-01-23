@@ -61,6 +61,7 @@ namespace Sunshine五十音
             textLabel.Text = str;
             textLabel.Size = s;
             textLabel.Font = new Font("宋体", 18, FontStyle.Bold);
+            textLabel.TextAlign = ContentAlignment.MiddleCenter;
             con.Add(textLabel);
         }
 
@@ -71,6 +72,7 @@ namespace Sunshine五十音
             textLabel.Text = ctrString;
             textLabel.Size = ctrSize;
             textLabel.Font = new Font("宋体", 18, FontStyle.Bold);
+            textLabel.TextAlign = ContentAlignment.MiddleCenter;
             con.Add(textLabel);
         }
     }
