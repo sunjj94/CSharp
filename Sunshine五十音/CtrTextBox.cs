@@ -68,10 +68,23 @@ namespace Sunshine五十音
         {
             TextBox textBox = new TextBox();
             textBox.Location = ctrLocation;
-            textBox.Size = ctrSize;
+            textBox.Size = ctrSize + new Size(20, 20);
             textBox.Font = new Font("宋体", 14, FontStyle.Regular);
             textBox.TextAlign = HorizontalAlignment.Center;
+            textBox.ImeMode = ImeMode.Hiragana;
             con.Add(textBox);
+        }
+                
+        private void EnterKey(TextBox tbox, KeyEventArgs e)
+        {
+            if (tbox.Focused)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    ctrString = tbox.Text;
+                    SendKeys.Send("{tab}");
+                }
+            }
         }
     }
 }

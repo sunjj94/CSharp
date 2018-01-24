@@ -18,6 +18,10 @@ namespace Sunshine五十音
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             //获取软件设置
             proForm = new Property();
             foreach (Control c in groupBox1.Controls)

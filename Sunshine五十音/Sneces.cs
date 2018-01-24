@@ -39,7 +39,7 @@ namespace Sunshine五十音
             }
             List<CtrTextBox> cTextBox = new List<CtrTextBox>(6);
             Point pTextBox = p;
-            pTextBox.Offset(0, 28);
+            pTextBox.Offset(-10, 28);
             for (int i = 0; i < 5; i++)
             {
                 cTextBox.Insert(i, new CtrTextBox());
@@ -79,28 +79,12 @@ namespace Sunshine五十音
                     p.ProType = "混合";
                 else
                     p.ProType = "片假名";
-            }
-
-            switch (p.ProType)
-            {
-                case "混合":
-                default:
-                    //type = 1;
-                    break;
-                case "平假名":
-                    //type = 2;
-                    break;
-                case "片假名":
-                    //type = 3;
-                    break;
-
-            }
+            }            
         }
 
         //获取数据库内容
         public void GetSqlContent(Property p, String[] s)
         {
-            //int maxData = 1, maxType = 1, sIndex = 0;
             SelectSqlTableName(p);
             try
             {
@@ -109,24 +93,50 @@ namespace Sunshine五十音
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "select * from 清音拨音";
-                //cmd.CommandText = string.Concat(cmd.CommandText, p.ProData[iData]);
+                cmd.CommandText = "select * from ";
+                Random ranTable = new Random();
+                int iTable;
+                do
+                {                    
+                    iTable = ranTable.Next(0, 3);
+                    cmd.CommandText = string.Concat(cmd.CommandText, p.ProTable[iTable]);
+                } while (p.ProTable[iTable] == null);
+                
+
                 for (int i = 0; i < 5; i++)
                 {
                     SqlDataReader sdr = cmd.ExecuteReader();
                     Random ranData = new Random();
-                    int iData = ranData.Next(0, 46);
-                    System.Threading.Thread.Sleep(20);                    
+                    int iData = 0;
+                    if (p.ProTable[iTable] == "清音拨音")
+                        iData = ranData.Next(0, 46);
+                    else if (p.ProTable[iTable] == "浊音半浊音")
+                        iData = ranData.Next(0, 25);
+                    else if (p.ProTable[iTable] == "拗音")
+                        iData = ranData.Next(0, 33);
+                    System.Threading.Thread.Sleep(20);             
                     for (int n = 0; n < iData; n++)
                     {
                         sdr.Read();
                     }
-                    //Random ranType = new Random();
-                    //int iType = ranType.Next(1, 3);
-                    //MessageBox.Show(sdr[iType].ToString(), "内容", MessageBoxButtons.OK);
+                    Random ranType = new Random();
+                    int iType;
                     if (sdr.Read())
                     {
-                        s[i] = sdr[1].ToString();
+                        switch (p.ProType)
+                        {
+                            case "混合":
+                            default:
+                                iType = ranType.Next(1, 3);
+                                s[i] = sdr[iType].ToString();
+                                break;
+                            case "平假名":
+                                s[i] = sdr[1].ToString();
+                                break;
+                            case "片假名":
+                                s[i] = sdr[2].ToString();
+                                break;
+                        }                        
                     }
                     sdr.Close();
                 }
@@ -145,7 +155,8 @@ namespace Sunshine五十音
         //更新场景
         public void Update(Point p, Size s, Control.ControlCollection con, Property pro)
         {
-            //多操作几次，否则会因扫描周期的问题导致销毁不全面
+            //最少操作六次，否则会导致销毁不全面
+            //因为删除操作会导致索引前移而漏掉部分控件
             for (int i = 0; i < 6; i++)
             {
                 foreach (Control c in con)

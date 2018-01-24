@@ -133,7 +133,7 @@
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(48, 26);
             this.ButtonOK.TabIndex = 6;
-            this.ButtonOK.Text = "确定";
+            this.ButtonOK.Text = "刷新";
             this.ButtonOK.UseVisualStyleBackColor = true;
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
@@ -149,6 +149,7 @@
             this.MinimumSize = new System.Drawing.Size(485, 422);
             this.Name = "Form1";
             this.Text = "Sunshine五十音";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
