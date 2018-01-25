@@ -70,20 +70,20 @@ namespace Sunshine五十音
             textBox.Location = ctrLocation;
             textBox.Size = ctrSize + new Size(20, 20);
             textBox.Font = new Font("宋体", 14, FontStyle.Regular);
-            textBox.TextAlign = HorizontalAlignment.Center;
+            textBox.TextAlign = HorizontalAlignment.Left;
             textBox.ImeMode = ImeMode.Hiragana;
+            textBox.KeyDown += new KeyEventHandler(EnterKeyDown);
             con.Add(textBox);
         }
-                
-        private void EnterKey(TextBox tbox, KeyEventArgs e)
+
+        private void EnterKeyDown(Object sender, KeyEventArgs e)
         {
-            if (tbox.Focused)
+            if (e.KeyCode == Keys.Enter)
             {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    ctrString = tbox.Text;
-                    SendKeys.Send("{tab}");
-                }
+                TextBox tbox = (TextBox)sender;
+                ctrString = tbox.Text;
+                tbox.TextAlign = HorizontalAlignment.Center;
+                SendKeys.Send("{tab}");
             }
         }
     }

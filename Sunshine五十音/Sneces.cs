@@ -175,11 +175,5 @@ namespace Sunshine五十音
         {
 
         }
-
-        //捕捉Enter键
-        public void Complete()
-        {
-
-        }
     }
 }
