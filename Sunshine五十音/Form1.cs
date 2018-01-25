@@ -39,7 +39,7 @@ namespace Sunshine五十音
             foreach (Control c in groupBox1.Controls)
             {
                 if (c is CheckBox)
-                proForm.SetProperty((CheckBox)c);
+                    proForm.SetProperty((CheckBox)c);
             }
             sneces.Update(new Point(30, 60), new Size(60, 25), this.Controls, proForm);
         }

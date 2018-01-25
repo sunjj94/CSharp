@@ -14,7 +14,8 @@ namespace Sunshine五十音
         private Point ctrLocation;
         private String ctrString;
         private Size ctrSize;
-                
+        private Control.ControlCollection ctrControl;
+
         //位置属性
         public Point CtrLocation
         {
@@ -53,6 +54,18 @@ namespace Sunshine五十音
             }
         }
 
+        public Control.ControlCollection CtrControl
+        {
+            get
+            {
+                return ctrControl;
+            }
+            set
+            {
+                ctrControl = value;
+            }
+        }
+
         //生成方法
         public void DrawCtrTextBox(Point p, Size s, Control.ControlCollection con)
         {
@@ -66,6 +79,7 @@ namespace Sunshine五十音
 
         public void DrawCtrTextBox(Control.ControlCollection con)
         {
+            ctrControl = con;
             TextBox textBox = new TextBox();
             textBox.Location = ctrLocation;
             textBox.Size = ctrSize + new Size(20, 20);
@@ -83,6 +97,20 @@ namespace Sunshine五十音
                 TextBox tbox = (TextBox)sender;
                 ctrString = tbox.Text;
                 tbox.TextAlign = HorizontalAlignment.Center;
+                int itablabel = tbox.TabIndex;
+                foreach (Control c in ctrControl)
+                {
+                    if (c is Label)
+                    {
+                        if (c.TabIndex == itablabel - 5)
+                        {
+                            if (string.Compare(c.Text.Trim(), tbox.Text) == 0)
+                                c.ForeColor = Color.Green;
+                            else
+                                c.ForeColor = Color.Red;
+                        }
+                    }
+                }
                 SendKeys.Send("{tab}");
             }
         }
